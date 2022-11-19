@@ -5,6 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/_2048Falling/Scenes/Main3.unity
+  - enabled: 0
+    path: Assets/_2048Falling/Scenes/Main.unity
     guid: 9d753261c557f59419ad347f403b6383
+  - enabled: 1
+    path: Assets/_2048Falling/Scenes/coba.unity
+    guid: e8730bca80dc6104587d3729e3ffc0e4
+  m_configObjects: {}
