@@ -184,6 +184,7 @@ namespace _2048FALLING
                 SoundManager.Instance.PlaySound(SoundManager.Instance.gameOver);
                 GameState = GameState.GameOver;
                 GameCount++;
+                pauseMenuUI.SetActive(false);
 
                 // Add other game over actions here if necessary
                 Debug.Log("take Photo");

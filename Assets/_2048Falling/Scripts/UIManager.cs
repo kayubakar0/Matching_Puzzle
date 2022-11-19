@@ -35,7 +35,7 @@ namespace _2048FALLING
 
         [Header("Premium Features Buttons")]
         // public GameObject watchRewardedAdBtn;
-        public GameObject leaderboardBtn;
+        // public GameObject leaderboardBtn;
         public GameObject achievementBtn;
         public GameObject shareBtn;
         // public GameObject iapPurchaseBtn;
@@ -153,7 +153,7 @@ namespace _2048FALLING
 
             // Enable or disable premium stuff
             bool enablePremium = IsPremiumFeaturesEnabled();
-            leaderboardBtn.SetActive(enablePremium);
+            // leaderboardBtn.SetActive(enablePremium);
             //shareBtn.SetActive(enablePremium);
             // iapPurchaseBtn.SetActive(false);
             // removeAdsBtn.SetActive(enablePremium);
