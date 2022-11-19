@@ -25,8 +25,9 @@ namespace _2048FALLING
             if (GameManager.Instance.GameState == GameState.Playing)
             {
                 moveTouch();
-                //Mouse();
-                // Key();
+                // Mouse();
+                Key();
+                
             }
 
         }
@@ -36,12 +37,16 @@ namespace _2048FALLING
             {
                 // move Right
                 gm.Move(MoveDirection.Right);
+                Debug.Log("Right");
+               
             }
             else
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 // move Left
                 gm.Move(MoveDirection.Left);
+                Debug.Log("Left");
+                
             }
 
         }

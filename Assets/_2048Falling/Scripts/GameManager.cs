@@ -22,6 +22,8 @@ namespace _2048FALLING
 
         private static bool isRestart;
 
+        public GameObject pauseMenuUI;
+
         public GameState GameState
         {
             get
@@ -162,9 +164,11 @@ namespace _2048FALLING
         {
             yield return new WaitForEndOfFrame();
             GameState = GameState.Playing;
+            pauseMenuUI.SetActive(true);
             if (SoundManager.Instance.background != null)
             {
                 SoundManager.Instance.PlayMusic(SoundManager.Instance.background);
+
             }
         }
 

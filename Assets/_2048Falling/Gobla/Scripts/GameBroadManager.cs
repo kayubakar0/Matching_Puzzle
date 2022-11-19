@@ -116,7 +116,7 @@ namespace _2048FALLING
 
         public void Move(MoveDirection md)
         {
-            //Debug.Log(md.ToString() + " move.");
+            Debug.Log(md.ToString() + " move.");
             if (canControl && ismoving)
             {
                 switch (md)
@@ -552,6 +552,7 @@ namespace _2048FALLING
             EmplyTiles[isColRandom].Number = 0;
             return false;   //failed 
         }
+
 
         public void init()
         {

@@ -22,8 +22,8 @@ namespace _2048FALLING
         public GameObject playBtn;
         public GameObject restartBtn;
         public GameObject menuButtons;
-        public GameObject dailyRewardBtn;
-        public Text dailyRewardBtnText;
+        // public GameObject dailyRewardBtn;
+        // public Text dailyRewardBtnText;
         public GameObject rewardUI;
         public GameObject settingsUI;
         public GameObject soundOnBtn;
@@ -34,13 +34,13 @@ namespace _2048FALLING
         public GameObject whiteCurtain;
 
         [Header("Premium Features Buttons")]
-        public GameObject watchRewardedAdBtn;
+        // public GameObject watchRewardedAdBtn;
         public GameObject leaderboardBtn;
         public GameObject achievementBtn;
         public GameObject shareBtn;
-        public GameObject iapPurchaseBtn;
-        public GameObject removeAdsBtn;
-        public GameObject restorePurchaseBtn;
+        // public GameObject iapPurchaseBtn;
+        // public GameObject removeAdsBtn;
+        // public GameObject restorePurchaseBtn;
 
         [Header("In-App Purchase Store")]
         public GameObject storeUI;
@@ -70,7 +70,7 @@ namespace _2048FALLING
         void Start()
         {
             scoreAnimator = score.GetComponent<Animator>();
-            dailyRewardAnimator = dailyRewardBtn.GetComponent<Animator>();
+            // dailyRewardAnimator = dailyRewardBtn.GetComponent<Animator>();
 
             Reset();
 
@@ -88,20 +88,20 @@ namespace _2048FALLING
             bestScore.text = ScoreManager.Instance.HighScore.ToString();
             coinText.text = CoinManager.Instance.Coins.ToString();
 
-            if (!DailyRewardController.Instance.disable && dailyRewardBtn.gameObject.activeInHierarchy)
-            {
-                if (DailyRewardController.Instance.CanRewardNow())
-                {
-                    dailyRewardBtnText.text = "GRAB YOUR REWARD!";
-                    dailyRewardAnimator.SetTrigger("activate");
-                }
-                else
-                {
-                    TimeSpan timeToReward = DailyRewardController.Instance.TimeUntilReward;
-                    dailyRewardBtnText.text = string.Format("REWARD IN {0:00}:{1:00}:{2:00}", timeToReward.Hours, timeToReward.Minutes, timeToReward.Seconds);
-                    dailyRewardAnimator.SetTrigger("deactivate");
-                }
-            }
+            // if (!DailyRewardController.Instance.disable && dailyRewardBtn.gameObject.activeInHierarchy)
+            // {
+            //     if (DailyRewardController.Instance.CanRewardNow())
+            //     {
+            //         dailyRewardBtnText.text = "GRAB YOUR REWARD!";
+            //         dailyRewardAnimator.SetTrigger("activate");
+            //     }
+            //     else
+            //     {
+            //         TimeSpan timeToReward = DailyRewardController.Instance.TimeUntilReward;
+            //         dailyRewardBtnText.text = string.Format("REWARD IN {0:00}:{1:00}:{2:00}", timeToReward.Hours, timeToReward.Minutes, timeToReward.Seconds);
+            //         dailyRewardAnimator.SetTrigger("deactivate");
+            //     }
+            // }
 
             if (settingsUI.activeSelf)
             {
@@ -148,16 +148,16 @@ namespace _2048FALLING
             newBestScore.SetActive(false);
             playBtn.SetActive(false);
             menuButtons.SetActive(false);
-            dailyRewardBtn.SetActive(false);
+            // dailyRewardBtn.SetActive(false);
             whiteCurtain.SetActive(false);
 
             // Enable or disable premium stuff
             bool enablePremium = IsPremiumFeaturesEnabled();
             leaderboardBtn.SetActive(enablePremium);
             //shareBtn.SetActive(enablePremium);
-            iapPurchaseBtn.SetActive(false);
-            removeAdsBtn.SetActive(enablePremium);
-            restorePurchaseBtn.SetActive(enablePremium);
+            // iapPurchaseBtn.SetActive(false);
+            // removeAdsBtn.SetActive(enablePremium);
+            // restorePurchaseBtn.SetActive(enablePremium);
 
             // Hidden by default
             storeUI.SetActive(false);
@@ -166,7 +166,7 @@ namespace _2048FALLING
 
             // These premium feature buttons are hidden by default
             // and shown when certain criteria are met (e.g. rewarded ad is loaded)
-            watchRewardedAdBtn.gameObject.SetActive(false);
+            // watchRewardedAdBtn.gameObject.SetActive(false);
         }
 
         public void StartGame()
@@ -184,6 +184,7 @@ namespace _2048FALLING
 
             // set game play again
             GameManager.Instance.RestartGame(0.1f);
+            Time.timeScale = 1f;
             //GameBroadManager.Instance.ResetGameShare();
         }
 
@@ -215,8 +216,8 @@ namespace _2048FALLING
             score.gameObject.SetActive(true);
             playBtn.SetActive(false);
             menuButtons.SetActive(false);
-            dailyRewardBtn.SetActive(false);
-            watchRewardedAdBtn.SetActive(false);
+            // dailyRewardBtn.SetActive(false);
+            // watchRewardedAdBtn.SetActive(false);
             //if (broadGame.activeSelf == false)
             //    broadGame.SetActive(true);
         }

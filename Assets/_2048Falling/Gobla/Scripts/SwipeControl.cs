@@ -25,10 +25,12 @@ namespace _2048FALLING
 
         private void Update()
         {
-            // move();
-            //MoveTouch();
+            move();
+            MoveTouch();
             MoveMouse();
         }
+
+        
 
         void MoveTouch()
         {
@@ -99,8 +101,6 @@ namespace _2048FALLING
                 timeMouseUp = Time.time;
                 //Debug.Log(timeMouseUp + " _ " + timeMouseDow);
             }
-
-
         }
 
         private void move()
@@ -138,8 +138,8 @@ namespace _2048FALLING
 
             #endregion
 
-            #region Tinh khoan cach 
-            _Delta = Vector2.zero;// gan gia tri ban dau
+            #region Calculate Distance
+            _Delta = Vector2.zero;// first position
             if (isDraging)
             {
                 if (Input.touches.Length > 0)
@@ -183,7 +183,7 @@ namespace _2048FALLING
 
         private void Reset()
         {
-            startTouch = _Delta = Vector2.zero; // khoi dong lai gia tri ban dau 
+            startTouch = _Delta = Vector2.zero; // reset first position 
             isDraging = false;
         }
     }
