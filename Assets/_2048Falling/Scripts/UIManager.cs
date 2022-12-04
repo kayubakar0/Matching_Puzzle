@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 #if EASY_MOBILE
 using EasyMobile;
@@ -79,6 +80,11 @@ namespace _2048FALLING
                 ShowStartUI();
                 wasShowStartUI = true;
             }
+        }
+
+        void returnHome()
+        {
+            wasShowStartUI = false;
         }
 
         // Update is called once per frame
@@ -184,6 +190,17 @@ namespace _2048FALLING
 
             // set game play again
             GameManager.Instance.RestartGame(0.1f);
+            Time.timeScale = 1f;
+            //GameBroadManager.Instance.ResetGameShare();
+        }
+
+        public void HomeGame()
+        {
+
+            // set game play again
+            returnHome();
+            // GameManager.Instance.RestartGame(0.1f);
+            SceneManager.LoadScene("coba");
             Time.timeScale = 1f;
             //GameBroadManager.Instance.ResetGameShare();
         }
